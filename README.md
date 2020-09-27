@@ -1,2 +1,2 @@
-# entorno-cliente
+# Entorno Cliente
 Asignatura de Entorno Cliente
