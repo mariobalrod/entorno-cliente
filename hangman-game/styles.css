@@ -7,3 +7,22 @@
     padding: 0rem;
     font-family: 'Rubik', sans-serif;
 }
+
+#title {
+    text-align: center;
+    margin-top: 3.75rem;
+}
+
+.figure-container {
+    width: 100%;
+    margin-top: 4.75rem;
+    display: flex;
+}
+
+.figure {
+    margin: 0rem auto;
+    fill: transparent;
+    stroke: #FFFFFF;
+    stroke-width: 0.25rem;
+    stroke-linecap: round;
+}
