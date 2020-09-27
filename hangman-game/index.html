@@ -8,7 +8,7 @@
     <title>Hangman</title>
 </head>
 <body>
-    <h1 id="title">Hangman</h1>
+    <h1 class="titles">Hangman</h1>
     <div class="game-container">
         <div class="figure-container">
             <svg class="figure" height="250" width="200">
@@ -16,19 +16,32 @@
                 <line x1="60" y1="20" x2="140" y2="20" />
                 <line x1="140" y1="20" x2="140" y2="50" />
                 <line x1="60" y1="20" x2="60" y2="230" />
-                <line x1="5" y1="230" x2="115" y2="230" />
+                <line x1="5" y1="230" x2="190" y2="230" />
     
                 <!-- Head -->
-                <circle cx="140" cy="70" r="20" />
+                <circle class="figure-part" cx="140" cy="70" r="20" />
                 <!-- Body -->
-                <line x1="140" y1="90" x2="140" y2="150" />
+                <line class="figure-part" x1="140" y1="90" x2="140" y2="150" />
                 <!-- Arms -->
-                <line x1="140" y1="120" x2="120" y2="100" />
-                <line x1="140" y1="120" x2="160" y2="100" />
+                <line class="figure-part" x1="140" y1="120" x2="120" y2="100" />
+                <line class="figure-part" x1="140" y1="120" x2="160" y2="100" />
                 <!-- Legs -->
-                <line x1="140" y1="150" x2="120" y2="190" />
-                <line x1="140" y1="150" x2="160" y2="190" />
+                <line class="figure-part" x1="140" y1="150" x2="120" y2="190" />
+                <line class="figure-part" x1="140" y1="150" x2="160" y2="190" />
             </svg>
+        </div>
+        <div class="wrong-letters-container">
+            <div class="wrong-letters">
+                <h4 class="titles" style="margin-top: 30px; color: #BEBEBE">Wrong letters</h4>
+                <p class="titles" style="margin-top: 20px; color: #EA4444">a f e g c</p>
+            </div>
+        </div>
+        <div class="word-container" id="word">
+            <div class="letter">h</div>
+            <div class="letter">e</div>
+            <div class="letter">l</div>
+            <div class="letter">l</div> 
+            <div class="letter">o</div> 
         </div>
     </div>
 </body>

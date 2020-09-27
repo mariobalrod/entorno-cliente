@@ -8,7 +8,7 @@
     font-family: 'Rubik', sans-serif;
 }
 
-#title {
+.titles {
     text-align: center;
     margin-top: 3.75rem;
 }
@@ -25,4 +25,25 @@
     stroke: #FFFFFF;
     stroke-width: 0.25rem;
     stroke-linecap: round;
+}
+
+.figure-part {
+    display: none;
+}
+
+.word-container {
+    display: flex;
+    margin-top: 4.75rem;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.125rem;
+    font-weight: bold;
+}
+
+.letter {
+    margin: 1.875rem;
+    text-align: center;
+    border-bottom: 0.1875rem solid #FFFFFF;
+    width: 3.125rem;
+    height: 3.75rem;
 }
