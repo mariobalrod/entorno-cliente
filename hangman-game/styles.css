@@ -31,7 +31,7 @@
     display: none;
 }
 
-.word-container {
+.word {
     display: flex;
     margin-top: 4.75rem;
     align-items: center;
@@ -46,4 +46,16 @@
     border-bottom: 0.1875rem solid #FFFFFF;
     width: 3.125rem;
     height: 3.75rem;
+}
+
+.wrong-letters {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrong-letter {
+    margin: 10px;
+    text-align: center;
+    color: red;
 }

@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="./styles.css">
     <title>Hangman</title>
 </head>
 <body>
@@ -31,18 +30,11 @@
             </svg>
         </div>
         <div class="wrong-letters-container">
-            <div class="wrong-letters">
-                <h4 class="titles" style="margin-top: 30px; color: #BEBEBE">Wrong letters</h4>
-                <p class="titles" style="margin-top: 20px; color: #EA4444">a f e g c</p>
-            </div>
+            <h4 class="titles" style="margin-top: 30px; color: #BEBEBE">Wrong letters</h4>
+            <div id="wrong-letters" class="wrong-letters"></div>
         </div>
-        <div class="word-container" id="word">
-            <div class="letter">h</div>
-            <div class="letter">e</div>
-            <div class="letter">l</div>
-            <div class="letter">l</div> 
-            <div class="letter">o</div> 
-        </div>
+        <div id="word" class="word"></div>
+        <script src="./script.js"></script>
     </div>
 </body>
 </html>
