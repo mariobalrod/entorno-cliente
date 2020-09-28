@@ -13,6 +13,14 @@
         <script>
             const frase = prompt("Escribe una frase: ");
 
+            const colores = {
+                a: 'red',
+                e: 'green',
+                i: 'blue',
+                o: 'purple',
+                u: 'pink'
+            }
+
             const numeroVocales = frase.match(/[aeiou]/gi).length;
             document.write(`<h1>Numero de vocales: ${numeroVocales}</h1>`)
 
@@ -26,7 +34,7 @@
             });
 
             const fraseConColores = arrayFrase.map((letra, index) => {
-                if (arrayVocales.includes(letra)) { return `<span style="color: red;">${letra}</span>` }
+                if (arrayVocales.includes(letra)) { return `<span style="color: ${colores[letra.toLowerCase()]};">${letra}</span>` }
                 else { return `<span>${letra}</span>` }
             })
 
