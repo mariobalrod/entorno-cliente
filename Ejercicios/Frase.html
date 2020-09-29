@@ -5,48 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Frase</title>
         <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
-        <style>
-            body {
-                font-family: 'Raleway', sans-serif;
-            }
-        </style>
-        <script>
-            const frase = prompt("Escribe una frase: ");
-
-            const colores = {
-                a: 'red',
-                e: 'green',
-                i: 'blue',
-                o: 'purple',
-                u: 'pink'
-            }
-
-            const numeroVocales = frase.match(/[aeiou]/gi).length;
-            document.write(`<h1>Numero de vocales: ${numeroVocales}</h1>`)
-
-            const arrayVocales = frase.match(/[aeiou]/gi);
-
-            const arrayFrase = Array.from(frase);
-
-            const fraseConNegritas = arrayFrase.map((letra, index) => {
-                if (arrayVocales.includes(letra)) { return `<span style="font-weight: bold;">${letra}</span>` }
-                else { return `<span font-weight: normal;>${letra}</span>` }
-            });
-
-            const fraseConColores = arrayFrase.map((letra, index) => {
-                if (arrayVocales.includes(letra)) { return `<span style="color: ${colores[letra.toLowerCase()]};">${letra}</span>` }
-                else { return `<span>${letra}</span>` }
-            })
-
-            document.write(`
-                    <p style="font-size: 20px">
-                        ${fraseConNegritas.join('')}    
-                    </p>
-                    <p style="font-size: 20px">
-                        ${fraseConColores.join('')}    
-                    </p>
-            `)
-        </script>
+        <style> body { font-family: 'Raleway', sans-serif; } </style>
+        <script src="frase.js"></script>
     </head>
     <body>
     </body>
