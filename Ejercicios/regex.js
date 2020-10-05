@@ -1,10 +1,9 @@
-const word = prompt('Introduce una palabra: '); 
+function recompose (word) {
+    let arr = word.match(/[aeiou]+|[^aeiou]+/gi);
 
-let vocales = word.match(/[aeiou]/gi);
-let consonantes = word.match(/[^aeiou ]/gi);
+    arr = arr.map(letters => {
+        return letters.split('').reverse().join('');
+    })
 
-if (vocales) vocales.reverse();
-if (consonantes) consonantes.reverse()
-
-console.log(vocales)
-console.log(consonantes)
+    return arr.join('').replace(/\B[A-Z]/g, " $&")
+}

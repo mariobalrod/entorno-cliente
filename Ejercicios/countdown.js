@@ -16,13 +16,10 @@ function isCountdown (countdown) {
                 max --;
             }
             block.push(temp);
-        } else {
-            block.push(max);
         }
-
     }
 
-    console.log(block)
+    return [block.length, block];
 } 
 
-isCountdown([5, 10, 4, 3, 2, 1, 3, 2, 1, 3, 4 ])
+console.log(isCountdown([3,2,1,5,5,3,2,1,5,5]))
