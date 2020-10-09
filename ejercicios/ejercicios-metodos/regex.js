@@ -1,3 +1,4 @@
+
 function recompose (word) {
     let arr = word.match(/[aeiou]+|[^aeiou]+/gi);
 
