@@ -1,23 +1,16 @@
-const adress = 'https://github.com/mariobalrod/hola.txt?tab=repositories#bhrgrgrg';
 
-function url(url) {
-    let protocol = url.match(/(^\w+):\/\//)
-    let ip = url.match(/^\w+:\/\/([\d\.]+)/)
-    let subdomain = url.match(/^\w+:\/\/([a-z]+)\.\w+\./)
-    let domain = url.match(/^\w+:\/\/(?:[a-z]+\.)?(\w+\.[a-z]+)/)
-    let folderTree = url.match(/^\w+:\/\/(?:[a-z]+\.)?\w+\.[a-z]+\/([\w\/]+)\//)
-    let targetFile = url.match(/\/([\w\.]+)(?:\?.*)?$/)
-    let argumentsFile = url.match(/(\?.+)/)
+const urlDecomposed = (url) => ({
+  protocol: url.match(/(.+):/)[1],
+  ipAdress: ((ip = url.match(/.{0,3}\..{0,3}\..\../)), ip ? ip[0] : ip),
+  subDomain: ((sub = url.match(/\/\/(\D+)\..+\..+\//)), sub && !ip ? sub[1] : null),
+  domainName: ip
+    ? null
+    : ((domain = url.split`/`[2]), sub ? domain.split`.`.slice(-2).join`.` : domain),
+  folderTree: ((domain = url.split`/`.slice(3, -1)), domain[0] ? domain : null),
+  targetFile: ((domain = url.split`/`.pop()), domain[0] ? domain.split`?`[0] : null),
+  argumentsFile: ((domain = url.split`?`), domain[1] ? "?" + domain[1] : null),
+});
 
-  return {
-      protocol,
-      ip,
-      subdomain,
-      domain,
-      folderTree,
-      targetFile,
-      argumentsFile
-   };
-}
 
-console.log(url("https://www.google.com/search/test.js?ok=1"))
+
+/* console.log(urlDecomposed("https://www.google.com/search/test.js?ok=1")) */
