@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="fibonacci"></div>
+
+    <h1 id="text">Estoy aqui</h1>
+
+    <select onchange="changeColor()" name="colors" id="colors">
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="red">Red</option>
+        <option value="yellow">Yellow</option>
+    </select>
+
+    <button type="button" onclick="cambiar()" value="Hola">Hola</button>
+    <button type="button" onclick="cambiar()" value="Hello">Hello</button>
+    <button type="button" onclick="cambiar()" value="Salut">Salut</button>
+    <input type="text" id="input" value="">
+
+    <script src="fibonacci.js"></script>
+    <script src="hideText.js"></script>
+    <script>
+        function changeColor() {
+            document.body.style.background = event.target.value;
+        }
+    </script>
+    <script>
+        function cambiar () {
+            document.getElementById('input').value = event.target.value
+        }
+    </script>
+</body>
+</html>
