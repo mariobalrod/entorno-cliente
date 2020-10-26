@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+        <input id="item" type="text" value="" onchange="handleChange(this.value)">
+        <button type="button" onclick="addItem()">Add item</button>
+        <ul id="list">
+
+        </ul>
+    <script>
+        const list = document.getElementById('list')
+        let itemValue = '';
+        function handleChange (val) {
+            itemValue = val
+        }
+        function addItem() {
+            const item = document.createElement('li');
+            item.innerText = itemValue;
+            list.appendChild(item);
+        }
+    </script>
+</body>
+</html>
