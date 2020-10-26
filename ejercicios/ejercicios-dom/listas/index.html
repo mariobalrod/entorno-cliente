@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas</title>
+    <style>
+        .container {
+            margin: 50px auto;
+            display: flex;
+            border: 1px solid black;
+            width: 1000px;
+            height: 500px;
+            padding: 20px;
+        }
+
+        .box {
+            border: 1px solid black;
+            width: 400px;
+            margin: 50px;
+        }
+
+        .element:hover {
+            cursor: pointer;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="box1">
+            <ul id="list1">
+                <li class="element" id="element1" value="list1" onclick="move(this)">Elemento 1</li>
+                <li class="element" id="element2" value="list1" onclick="move(this)">Elemento 2</li>
+                <li class="element" id="element3" value="list1" onclick="move(this)">Elemento 3</li>
+                <li class="element" id="element4" value="list1" onclick="move(this)">Elemento 4</li>
+                <li class="element" id="element5" value="list1" onclick="move(this)">Elemento 5</li>
+            </ul>
+        </div>
+        <div class="box" id="box2">
+            <ul id="list2">
+
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

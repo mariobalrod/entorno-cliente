@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: gray;
+            padding: 10px;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            color: white;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        li:hover {
+            background-color: slategrey;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="options" onclick="showView(this)" value="option1">Option 1</li>
+            <li class="options" onclick="showView(this)" value="option2">Option 2</li>
+            <li class="options" onclick="showView(this)" value="option3">Option 3</li>
+            <li class="options" onclick="showView(this)" value="option4">Option 4</li>
+            <li class="options" onclick="showView(this)" value="option5">Option 5</li>
+        </ul>
+    </nav>
+
+    <h1 id="viewName"></h1>
+
+    <script src="script.js"></script>
+</body>
+</html>
