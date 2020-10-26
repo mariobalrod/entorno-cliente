@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        #container {
+            margin: 200px auto;
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid black;
+        }
+
+        div div {
+            display: flex;
+            align-items: center;
+            margin: 10px;
+            justify-content: space-around;
+        }
+
+        input {
+            margin: 10px;
+            border: 1px solid black;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <input type="text" id="valor_numero">
+        <div>
+            <button onclick="addTerm(1)">1</button>
+            <button onclick="addTerm(2)">2</button>
+            <button onclick="addTerm(3)">3</button>
+            <button onclick="addTerm(4)">4</button>
+        </div>
+
+        <div>
+            <button onclick="addTerm(5)">5</button>
+            <button onclick="addTerm(6)">6</button>
+            <button onclick="addTerm(7)">7</button>
+            <button onclick="addTerm(8)">8</button>
+        </div>
+
+        <div>
+            <button onclick="addTerm(9)">9</button>
+            <button onclick="addTerm(0)">0</button>
+            <button onclick="operar(1)">+</button>
+            <button onclick="operar(2)">-</button>
+        </div>
+
+        <div>
+            <button onclick="operar(3)">/</button>
+            <button onclick="operar(4)">*</button>
+            <button onclick="darCE()">CE</button>
+            <button onclick="operate()">=</button>
+        </div>
+    </div>
+    <script>
+        let num1 = 0;
+	    let num2 = 0;
+        let opera;
+        
+        function addTerm(numero){
+            if(num1==0 && num1 !== '0.'){
+                num1 = numero;
+            }else{
+                num1 += numero;
+            }
+            clean();
+        }
+
+        function darCE(){
+            num1 = 0;
+            num2 = 0;
+            clean();
+        }
+
+        function operar(valor){
+            if (num1 == 0){
+                num1 = parseInt(document.getElementById("valor_numero").value);
+            }
+            num2 = parseInt(num1);
+            num1= 0;
+            opera = valor;
+        }
+
+        function operate(){
+            switch (opera){
+                case 1:
+                    num1 += num2;
+                break;
+                case 2:
+                    num1 = num2 - num1;
+                break;
+                case 3:
+                    num1 = num2 / num1;
+                break;
+                case 4:
+                    num1 *= num2;
+                    
+                break;
+             }
+            clean();
+            num2 = num1;
+            num1 = 0;
+        }
+
+        function clean(){
+            document.getElementById("valor_numero").value = num1;
+        }
+    </script>
+</body>
+</html>
