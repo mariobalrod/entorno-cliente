@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primero</title>
+</head>
+<body>
+    <script>
+        document.cookie = "username=John Doe;";
+        document.cookie = "year=12;";
+        document.cookie = "date=12/12/200;";
+        
+        console.log(document.cookie)
+        let element = document.cookie.split('; ')
+        console.log(element)
+        element = element.map(item => {
+            return item.split('=')
+        })
+        console.log(element)
+
+        objectCookies = {
+            [element[0][0]]: element[0][1],
+            [element[1][0]]: element[1][1],
+            [element[2][0]]: element[2][1],
+        }
+
+        console.log(objectCookies)
+
+    </script>
+</body>
+</html>
