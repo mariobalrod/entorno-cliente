@@ -1,11 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendario</title>
+
+    <style>
+        .calendar__root {
+            width: 300px;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #DBCECA;
+            padding: 30px;
+            border: 2px solid black;
+        }
+
+        .calendar__header {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        .buttons:hover {
+            cursor: pointer;
+            opacity: 0.4;
+        }
+
+        .calendar__body {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .week__days {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .day {
+            font-weight: 600;
+            font-size: 15px;
+            color: gray;
+        }
+
+        .calendar__days {
+            margin-top: 20px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-gap: 30px;
+            font-size: 18px;
+        }
+
+        span.item.today {
+            background: blue;
+            color: white;
+            font-weight: 600;
+        }
+
+        .item:nth-child(7n - 1), .item:nth-child(7n) { 
+            background-color: green;
+            color: white;    
+        }
+
+        .disabled {
+            color: gray;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div class="calendar__root">
+
+        <div class="calendar__header">
+            <span class="buttons" id="prev-month">◄</span>
+            <span id="month"></span>
+            <span id="year"></span>
+            <span class="buttons" id="next-month">►</span>
+        </div>
+
+        <div class="calendar__body">
+            <div class="week__days">
+                <span class="day">L</span>
+                <span class="day">M</span>
+                <span class="day">X</span>
+                <span class="day">J</span>
+                <span class="day">V</span>
+                <span class="day">S</span>
+                <span class="day">D</span>
+            </div>
+
+            <div class="calendar__days" id="dates">
+
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </div>
 </body>
+
 </html>
