@@ -4,7 +4,7 @@ import { reset } from 'styled-reset';
 const GlobalStyle = createGlobalStyle`
   ${reset};
   html {
-    font-size: 85%; 
+    font-size: 100%; 
   }
   html, button, input {
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen','Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
