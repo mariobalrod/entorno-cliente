@@ -5,10 +5,10 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import AmongUs from './containers/AmongUs'
-import Main from './containers/Main'
-import GroupsCreation from './containers/GroupsCreation'
-import TresEnRaya from './containers/TresEnRaya'
+import AmongUs from './views/AmongUs'
+import Main from './views/Main'
+import GroupsCreation from './views/GroupsCreation'
+import TresEnRaya from './views/TresEnRaya'
 import GlobalStyle from './GlobalStyle';
 
 const App = () => {
