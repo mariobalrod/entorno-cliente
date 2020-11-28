@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"
+        integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ=="
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <button onclick="getBooks()">Get Books</button>
+    <script>
+        async function getBooks() {
+            const res = await $.ajax({
+                url: 'https://jsonplaceholder.typicode.com/todos',
+                method: 'GET',
+                success: function showData() {
+                    console.log('Success!')
+                }
+            })
+
+            console.log(res)
+        }
+    </script>
+</body>
+
+</html>
