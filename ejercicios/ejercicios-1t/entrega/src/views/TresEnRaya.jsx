@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import Link from "../components/Link";
+import DefaultLink from "../components/Link";
 
 const Container = styled.div`
-  margin-top: 100px;
+  margin-top: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,17 +10,32 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
-  margin-top: 50px;
+  margin-top: 200px;
   width: 1000px;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-around;
+`;
+
+const Link = styled(DefaultLink)`
+  border: 1px solid gray;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  :hover {
+    border: 3px solid #CCE;
+    color: #CCE;
+  }
 `;
 
 const TresEnRaya = () => {
   return (
     <Container>
-      <Link to="/">Go back</Link>
-      <Content></Content>
+      <DefaultLink to="/">Go back</DefaultLink>
+      <Content>
+        <Link to="/tres/indi">Player vs Ia</Link>
+        <Link to="/tres/multi">Player vs Player</Link>
+      </Content>
     </Container>
   );
 };
