@@ -5,6 +5,7 @@ import Square from "../components/Square";
 import styled from 'styled-components';
 
 import isVictory from '../utils/isVictory';
+import ia from '../utils/ia';
 
 const Container = styled.div`
   margin-top: 100px;
@@ -62,8 +63,8 @@ const Individual = () => {
   }, [boardValues, setBoardValues, victory, setVictory])
 
   const handleClickSquare = useCallback(
-    (pos) => {
-      const newBoardValues = boardValues.map((value, index) => {
+    async (pos) => {
+      const newBoardValues = await boardValues.map((value, index) => {
         if (pos === index && !value) {
           return "X";
         } else {
@@ -71,7 +72,9 @@ const Individual = () => {
         }
       });
 
-      setBoardValues(newBoardValues);
+      const finalBoard = await ia(newBoardValues);
+
+      setBoardValues(finalBoard);
     },
     [boardValues, setBoardValues]
   );
