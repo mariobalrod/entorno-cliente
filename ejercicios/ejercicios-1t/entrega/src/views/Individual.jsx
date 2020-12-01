@@ -1,8 +1,10 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import Link from "../components/Link";
 import Indicator from "../components/Indicator";
 import Square from "../components/Square";
 import styled from 'styled-components';
+
+import isVictory from '../utils/isVictory';
 
 const Container = styled.div`
   margin-top: 100px;
@@ -43,6 +45,21 @@ const Individual = () => {
     null,
   ]);
   const [victory, setVictory] = useState(0);
+
+  useEffect(() => {
+    if (isVictory(boardValues) === 'X') {
+      alert('Has ganado!')
+      setVictory(victory + 1)
+
+      //Reset board
+      setBoardValues([null, null, null, null, null, null, null, null, null]);
+    } else if (isVictory(boardValues) === 'O') {
+      alert('Perdistes!')
+
+      //Reset board
+      setBoardValues([null, null, null, null, null, null, null, null, null]);
+    }
+  }, [boardValues, setBoardValues, victory, setVictory])
 
   const handleClickSquare = useCallback(
     (pos) => {
