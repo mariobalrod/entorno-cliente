@@ -47,6 +47,7 @@ const playersData = [
 
 const AmongUs = () => {
   const [hideVotation, setHideVotation] = useState(true);
+  const [players, setPlayers] = useState(playersData)
 
   const handleHideVotation = useCallback(() => {
     setHideVotation(false);
@@ -55,16 +56,27 @@ const AmongUs = () => {
   const handleVote = useCallback(
     (id) => {
       console.log("You voted to: ", id);
+      // Esto puede cambiar 
+      const newPlayersState = players.map(player => {
+        if (player.id === id) {
+          player.votations = player.votations + 1;
+
+          return player;
+        }
+        return player;
+      })
+
+      setPlayers(newPlayersState);
       handleHideVotation();
     },
-    [handleHideVotation]
+    [handleHideVotation, players, setPlayers]
   );
 
   return (
     <Container>
       <Link to='/'>Go back</Link>
       <Content>
-        {playersData.map((player) => (
+        {players.map((player) => (
           <AmongCard
             key={player.id}
             player={player}

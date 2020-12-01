@@ -58,6 +58,8 @@ const AmongCard = ({player, handleVote, hideVotation}) => {
         <Color color={player.color}>{player.color}</Color>
       </Section>
 
+      <Name>{player.votations}</Name>
+
       {hideVotation && (
         <Votation>
           <Button onClick={() => handleVote(player.id)} variant="yes"></Button>
