@@ -10,6 +10,10 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   border: 1px solid gray;
+
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 const Value = styled.span`

@@ -2,10 +2,10 @@ import { useState, useCallback, useEffect } from "react";
 import Link from "../components/Link";
 import Indicator from "../components/Indicator";
 import Square from "../components/Square";
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import isVictory from '../utils/isVictory';
-import ia from '../utils/ia';
+import isVictory from "../utils/isVictory";
+import ia from "../utils/ia";
 
 const Container = styled.div`
   margin-top: 100px;
@@ -24,13 +24,28 @@ const Header = styled.div`
 `;
 
 const Board = styled.div`
-    margin-top: 100px;
+  margin-top: 100px;
 `;
 
 const Row = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Button = styled.button`
+  margin-top: 50px;
+  background-color: #3dc670;
+  padding: 15px 20px;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600px;
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 const Individual = () => {
@@ -82,6 +97,8 @@ const Individual = () => {
   return (
     <Container>
       <Link to="/tres">Go back</Link>
+
+      <Button onClick={() => setVictory(0)}>Resetear vicorias</Button>
       <Header>
         <Indicator text="Numero de victorias: " value={victory} />
       </Header>
