@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #imagen {
+            width: 50px;
+            position: relative;
+            display: block;
+        }
+
+        #tablero {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="tablero">
+        <img src="" id="imagen" alt="DVD" />
+    </div>
+
+    <script>
+        let y = 0;
+        let x = 0;
+        let yAumenta = 1;
+        let xAumenta = 1;
+        let velocidad = 1;
+
+        const tamanioImagen = document.getElementById("imagen").clientWidth;
+        console.log(tamanioImagen)
+
+        let intervalo = setInterval("movimiento()", 5);
+
+        function movimiento() {
+            if (xAumenta == 1) {
+                x += velocidad;
+            } else {
+                x -= velocidad;
+            }
+
+            if (x <= 0) { xAumenta = 1; x = 0; } else if (x >= window.innerWidth) {
+                xAumenta = 0;
+                x = window.innerWidth - tamanioImagen;
+            }
+
+            //-------------------------------------------------------------
+
+            if (yAumenta == 1) {
+                y += velocidad;
+            } else {
+                y -= velocidad;
+            }
+
+            if (y <= 0) { yAumenta = 1; y = 0; } else if (y >= window.innerHeight) {
+                yAumenta = 0;
+                y = window.innerHeight - tamanioImagen;
+            }
+
+            document.getElementById("imagen").style.left = String(x) + "px";
+            document.getElementById("imagen").style.top = String(y) + "px";
+        }
+    </script>
+</body>
+
+</html>
