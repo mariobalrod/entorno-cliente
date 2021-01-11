@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.5.0/fetch.min.js" integrity="sha512-TXERecoxO85MPkCFqSG3LSe5nVimbZddhrPP2PwSMH5C5+kIoXi30bm1RgBckHQMkNCZN/i5FvHIvJuytp6ECw==" crossorigin="anonymous"></script>
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/todos')
+            .then(res => res.json())
+            .then(json => console.log(json))
+            .catch(err => console.log(err))
+
+        /* async function async_await () {
+            const res = await fetch('https://jsonplaceholder.typicode.com/todos');
+            const json = res.json();
+            console.log(json);
+        } */
+
+    </script>
+</body>
+</html>
